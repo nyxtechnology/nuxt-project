@@ -52,7 +52,10 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/svg-sprite-module
     '@nuxtjs/svg-sprite',
     // Doc: https://github.com/nuxt-community/sitemap-module
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    ['@nuxtjs/component-cache', {
+      maxAge: 1000 * 60 * 60
+    }]
   ],
   /*
    ** Axios module configuration
