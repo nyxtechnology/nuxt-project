@@ -63,6 +63,17 @@ module.exports = {
    */
   axios: {},
   /*
+   ** Apollo module configuration
+   ** See https://github.com/nuxt-community/apollo-module#setup
+   */
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://admin.pece.local'
+      }
+    }
+  },
+  /*
    ** Sitemap module configuration
    ** See https://github.com/nuxt-community/sitemap-module#setup
    ** See https://github.com/ekalinin/sitemap.js#usage
