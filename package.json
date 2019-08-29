@@ -16,6 +16,7 @@
     "@nuxtjs/apollo": "^4.0.0-rc12",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0",
+    "@nuxtjs/svg-sprite": "^0.2.1",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "graphql-tag": "^2.10.1",

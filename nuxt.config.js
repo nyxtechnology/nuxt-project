@@ -46,13 +46,21 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/apollo-module
     '@nuxtjs/apollo',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    // Doc: https://github.com/nuxt-community/svg-sprite-module
+    '@nuxtjs/svg-sprite'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  /*
+   ** svg Sprite configuration
+   */
+  svgSprite: {
+    input: '~/assets/svg/'
+  },
   /*
    ** Build configuration
    */
