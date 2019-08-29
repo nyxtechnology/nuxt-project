@@ -48,13 +48,24 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // Doc: https://github.com/nuxt-community/svg-sprite-module
-    '@nuxtjs/svg-sprite'
+    '@nuxtjs/svg-sprite',
+    // Doc: https://github.com/nuxt-community/sitemap-module
+    '@nuxtjs/sitemap'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  /*
+   ** Sitemap module configuration
+   ** See https://github.com/nuxt-community/sitemap-module#setup
+   ** See https://github.com/ekalinin/sitemap.js#usage
+   */
+  sitemap: {
+    hostname: '#',
+    gzip: true
+  },
   /*
    ** svg Sprite configuration
    */
