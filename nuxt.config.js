@@ -69,6 +69,8 @@ module.exports = {
     '@nuxtjs/style-resources',
     // Doc: https://nuxt-community.github.io/nuxt-i18n/
     'nuxt-i18n',
+    // Doc: https://github.com/nuxt-community/sentry-module
+    '@nuxtjs/sentry',
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/component-cache
     [
       '@nuxtjs/component-cache',
@@ -100,6 +102,13 @@ module.exports = {
     scss: [
       './assets/styles/library/settings/*.scss'
     ]
+  },
+  /*
+   ** Sentry configuration
+   ** See https://github.com/nuxt-community/sentry-module#setup
+   */
+  sentry: {
+    dsn: ''
   },
   /*
    ** Sitemap module configuration
