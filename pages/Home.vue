@@ -3,10 +3,10 @@
     <div>
       <logo />
       <h1 class="title">
-        frontend-v2-pece
+        V2 PECE
       </h1>
       <h2 class="subtitle">
-        front-end for v2 PECE distribution
+        {{ $t('description') }}
       </h2>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">

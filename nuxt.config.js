@@ -36,11 +36,14 @@ module.exports = {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-     // Doc: https://github.com/nuxt-community/router-module
-    ['@nuxtjs/router', {
-      path: path.resolve(__dirname, 'router'),
-      fileName: 'index.js'
-    }]
+    // Doc: https://github.com/nuxt-community/router-module
+    [
+      '@nuxtjs/router',
+      {
+        path: path.resolve(__dirname, 'router'),
+        fileName: 'index.js'
+      }
+    ]
   ],
   /*
    ** Nuxt.js modules
@@ -62,10 +65,15 @@ module.exports = {
     '@nuxtjs/browserconfig',
     // Doc: https://github.com/nuxt-community/webpackmonitor-module
     '@nuxtjs/webpackmonitor',
+    // Doc: https://nuxt-community.github.io/nuxt-i18n/
+    'nuxt-i18n',
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/component-cache
-    ['@nuxtjs/component-cache', {
-      maxAge: 1000 * 60 * 60
-    }]
+    [
+      '@nuxtjs/component-cache',
+      {
+        maxAge: 1000 * 60 * 60
+      }
+    ]
   ],
   /*
    ** Axios module configuration
@@ -103,6 +111,27 @@ module.exports = {
    */
   browserconfig: {
     TileColor: '#6c6fd4'
+  },
+  /*
+   ** i18n
+   ** See https://github.com/nuxt-community/nuxt-i18n
+   ** See https://github.com/nuxt-community/nuxt-i18n
+   */
+  i18n: {
+    seo: false,
+    defaultLocale: 'en',
+    lazy: true,
+    langDir: 'lang/',
+    locales: [
+      {
+        code: 'en',
+        file: 'en-US.js'
+      },
+      {
+        code: 'pt',
+        file: 'pt-BR.js'
+      }
+    ]
   },
   /*
    ** Build configuration
