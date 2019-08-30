@@ -166,10 +166,12 @@ module.exports = {
     locales: [
       {
         code: 'en',
+        iso: 'en-US',
         file: 'en-US.js'
       },
       {
         code: 'pt',
+        iso: 'pt-BR',
         file: 'pt-BR.js'
       }
     ]
