@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">
-        V2 PECE
+        NUXT PROJECT
       </h1>
       <h2 class="subtitle">
         {{ $t('description') }}
