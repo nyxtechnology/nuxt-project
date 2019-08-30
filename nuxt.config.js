@@ -53,6 +53,9 @@ module.exports = {
     '@nuxtjs/svg-sprite',
     // Doc: https://github.com/nuxt-community/sitemap-module
     '@nuxtjs/sitemap',
+    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/browserconfig
+    '@nuxtjs/browserconfig'
+    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/component-cache
     ['@nuxtjs/component-cache', {
       maxAge: 1000 * 60 * 60
     }]
@@ -87,6 +90,9 @@ module.exports = {
    */
   svgSprite: {
     input: '~/assets/svg/'
+  },
+  browserconfig: {
+    TileColor: '#6c6fd4'
   },
   /*
    ** Build configuration
