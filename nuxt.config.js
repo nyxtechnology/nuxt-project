@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   mode: 'universal',
   /*
@@ -35,7 +37,10 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
      // Doc: https://github.com/nuxt-community/router-module
-    '@nuxtjs/router'
+    ['@nuxtjs/router', {
+      path: path.resolve(__dirname, 'router'),
+      fileName: 'index.js'
+    }]
   ],
   /*
    ** Nuxt.js modules
@@ -54,7 +59,7 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/sitemap-module
     '@nuxtjs/sitemap',
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/browserconfig
-    '@nuxtjs/browserconfig'
+    '@nuxtjs/browserconfig',
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/component-cache
     ['@nuxtjs/component-cache', {
       maxAge: 1000 * 60 * 60
@@ -91,6 +96,9 @@ module.exports = {
   svgSprite: {
     input: '~/assets/svg/'
   },
+  /*
+   ** Browser config
+   */
   browserconfig: {
     TileColor: '#6c6fd4'
   },
