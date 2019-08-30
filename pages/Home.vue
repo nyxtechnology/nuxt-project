@@ -25,12 +25,18 @@
 </template>
 
 <script>
+import { onMounted } from '@vue/composition-api'
 import Logo from '~/components/Logo.vue'
 
 export default {
   name: 'Home',
   components: {
     Logo
+  },
+  setup () {
+    onMounted(() => {
+      console.log('called in onMounted')
+    })
   }
 }
 </script>
