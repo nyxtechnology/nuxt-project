@@ -60,6 +60,8 @@ module.exports = {
     '@nuxtjs/sitemap',
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/browserconfig
     '@nuxtjs/browserconfig',
+    // Doc: https://github.com/nuxt-community/webpackmonitor-module
+    '@nuxtjs/webpackmonitor',
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/component-cache
     ['@nuxtjs/component-cache', {
       maxAge: 1000 * 60 * 60
