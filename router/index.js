@@ -4,7 +4,7 @@ import routes from './routes'
 
 Vue.use(Router)
 
-export function createRouter() {
+export function createRouter () {
   return new Router({
     mode: 'history',
     routes

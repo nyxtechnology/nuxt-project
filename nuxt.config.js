@@ -65,6 +65,8 @@ module.exports = {
     '@nuxtjs/browserconfig',
     // Doc: https://github.com/nuxt-community/webpackmonitor-module
     '@nuxtjs/webpackmonitor',
+    // Doc: https://github.com/nuxt-community/style-resources-module#setup
+    '@nuxtjs/style-resources',
     // Doc: https://nuxt-community.github.io/nuxt-i18n/
     'nuxt-i18n',
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/component-cache
@@ -90,6 +92,14 @@ module.exports = {
         httpEndpoint: 'http://admin.pece.local'
       }
     }
+  },
+  /*
+   ** Style configuration files
+   */
+  styleResources: {
+    scss: [
+      './assets/styles/library/settings/*.scss'
+    ]
   },
   /*
    ** Sitemap module configuration
@@ -140,6 +150,6 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend (config, ctx) {}
   }
 }
