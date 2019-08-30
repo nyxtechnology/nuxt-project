@@ -1,4 +1,5 @@
 const path = require('path')
+require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
@@ -71,6 +72,14 @@ module.exports = {
     'nuxt-i18n',
     // Doc: https://github.com/nuxt-community/sentry-module
     '@nuxtjs/sentry',
+    // Doc: https://github.com/nuxt-community/sentry-module
+    [
+      '@nuxtjs/google-tag-manager', 
+      {
+        id: process.env.NUXT_APP_GTM_ID,
+        dev: (process.env.NODE_ENV === 'development')
+      }
+    ],
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/component-cache
     [
       '@nuxtjs/component-cache',
