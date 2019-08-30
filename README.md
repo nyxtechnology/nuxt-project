@@ -4,13 +4,25 @@
 
 ## Modules
 - PWA
-- ...
+- Axios
+- Apollo
+- Dotenv
+- svg-sprite
+- sitemap
+- style-resources
+- i18n
+- sentry
+- Google tag manager
+- Google Analytics
 
 ## Build Setup
 
 ``` bash
 # install dependencies
 $ npm run install
+
+# Copy environment file and update data
+$ cp .env.example .env
 
 # serve with hot reload at localhost:3000
 $ npm run dev
