@@ -1,6 +1,10 @@
-# frontend-v2-pece
+# Nuxt project + modules
 
-> front-end for v2 PECE distribution
+> Boilerplate Nuxt + essential modules
+
+## Modules
+- PWA
+- ...
 
 ## Build Setup
 
