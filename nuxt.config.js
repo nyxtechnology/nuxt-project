@@ -72,7 +72,9 @@ module.exports = {
     'nuxt-i18n',
     // Doc: https://github.com/nuxt-community/sentry-module
     '@nuxtjs/sentry',
-    // Doc: https://github.com/nuxt-community/sentry-module
+    // Doc: https://github.com/nuxt-community/device-module
+    '@nuxtjs/device',
+    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/google-tag-manager
     [
       '@nuxtjs/google-tag-manager', 
       {
