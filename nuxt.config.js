@@ -80,7 +80,7 @@ module.exports = {
     [
       '@nuxtjs/google-tag-manager', 
       {
-        id: process.env.NUXT_APP_GTM_ID,
+        id: process.env.NUXT_MODULE_GTM_ID,
         dev: (process.env.NODE_ENV === 'development')
       }
     ],
@@ -128,7 +128,7 @@ module.exports = {
    ** See https://github.com/nuxt-community/sentry-module#setup
    */
   googleAnalytics: {
-    id:  process.env.NUXT_APP_ANALYTICS_ID
+    id:  process.env.NUXT_MODULE_ANALYTICS_ID
   },
   /*
    ** Sitemap module configuration
