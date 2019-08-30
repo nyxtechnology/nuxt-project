@@ -74,6 +74,8 @@ module.exports = {
     '@nuxtjs/sentry',
     // Doc: https://github.com/nuxt-community/device-module
     '@nuxtjs/device',
+    // Doc: https://github.com/nuxt-community/analytics-module
+    '@nuxtjs/google-analytics',
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/google-tag-manager
     [
       '@nuxtjs/google-tag-manager', 
@@ -120,6 +122,13 @@ module.exports = {
    */
   sentry: {
     dsn: process.env.NUXT_MODULE_SENTRY_DSN
+  },
+  /*
+   ** Sentry configuration
+   ** See https://github.com/nuxt-community/sentry-module#setup
+   */
+  googleAnalytics: {
+    id:  process.env.NUXT_APP_ANALYTICS_ID
   },
   /*
    ** Sitemap module configuration
