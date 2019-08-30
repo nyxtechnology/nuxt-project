@@ -100,7 +100,7 @@ module.exports = {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: 'http://admin.pece.local'
+        httpEndpoint: process.env.NUXT_MODULE_APOLLO_HTTP
       }
     }
   },
@@ -117,7 +117,7 @@ module.exports = {
    ** See https://github.com/nuxt-community/sentry-module#setup
    */
   sentry: {
-    dsn: ''
+    dsn: process.env.NUXT_MODULE_SENTRY_DSN
   },
   /*
    ** Sitemap module configuration
@@ -147,7 +147,7 @@ module.exports = {
    */
   i18n: {
     seo: false,
-    defaultLocale: 'en',
+    defaultLocale: process.env.NUXT_MODULE_i18N_DEFAULT_LOCALE,
     lazy: true,
     langDir: 'lang/',
     locales: [
