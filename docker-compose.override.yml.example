@@ -48,8 +48,8 @@ services:
       - '443:443'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./docker/staging/traefik/traefik.toml:/traefik.toml
-      - ./docker/staging/traefik/acme.json:/acme.json
+      - ./docker/traefik/traefik.toml:/traefik.toml
+      - ./docker/traefik/acme.json:/acme.json
     labels:
       - "traefik.docker.network=nyx"
       - "traefik.port=8080"
