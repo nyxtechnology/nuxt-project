@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+  front:
+    image: wodby/node:10.16
+    env_file: .env
+    container_name: front-nuxt
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+    restart: always
+    command: npm run start
+    networks:
+      - nyx
+    ports:
+      - 4000:5000 # 4000 is a external port accessible in local network, for example: http://192.168.0.12:4000
+    labels:
+      - 'traefik.port=5000'
+      - 'traefik.enable=true'
+      - 'traefik.backend=node'
+      - 'traefik.frontend.priority = 10'
+      - 'traefik.docker.network=nyx'
+      - 'traefik.frontend.rule=Host:${PROJECT_BASE_URL}'
+
+  portainer:
+    image: portainer/portainer
+    container_name: 'portainer'
+    command: --no-auth -H unix:///var/run/docker.sock
+    networks:
+      - nyx
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock    
+    labels:
+      - 'traefik.backend=portainer'
+      - 'traefik.port=9000'
+      - 'traefik.docker.network=nyx'
+      - 'traefik.frontend.rule=Host:portainer.${PROJECT_BASE_URL}'
+
+  traefik:
+    image: traefik
+    container_name: traefik
+    command: --web --docker --logLevel=INFO
+    networks:
+      - nyx
+    ports:
+      - '80:80'
+      - '5000:5000'
+      - '8080:8080' # Dashboard
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - 'traefik.docker.network=nyx'
+      - 'traefik.port=8080'
+
+networks:
+  nyx:
+    external: true
