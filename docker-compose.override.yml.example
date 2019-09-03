@@ -2,7 +2,7 @@ version: "3"
 
 services:
   front:
-    image: wodby/node:10.16
+    image: wodby/node:$NODE_TAG
     env_file: .env
     container_name: front-nuxt
     working_dir: /home/node/app
@@ -11,9 +11,9 @@ services:
     restart: unless-stopped
     command: npm run start
     ports:
-      - 4000:5000 # 4000 is a external port accessible in local network, for example: http://192.168.0.12:4000
+      - 4000:$NUXT_PORT
     labels:
-      - 'traefik.port=5000'
+      - 'traefik.port=${NUXT_PORT}'
       - 'traefik.enable=true'
       - 'traefik.backend=node'
       - 'traefik.frontend.priority = 10'
@@ -21,6 +21,20 @@ services:
       - 'traefik.frontend.rule=Host:${PROJECT_BASE_URL}'
     networks:
       - nyx
+
+    portainer:
+      image: portainer/portainer
+      container_name: 'portainer'
+      command: --no-auth -H unix:///var/run/docker.sock
+      networks:
+        - nyx
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock    
+      labels:
+        - 'traefik.backend=portainer'
+        - 'traefik.port=9000'
+        - 'traefik.docker.network=nyx'
+        - 'traefik.frontend.rule=Host:portainer.${PROJECT_BASE_URL}'
 
   traefik:
     image: traefik
@@ -30,11 +44,12 @@ services:
       - nyx
     ports:
       - '80:80'
-      - '5000:5000'
-      - '8080:8080' # Dashboard
+      - $NUXT_PORT:$NUXT_PORT
       - '443:443'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - ./docker/staging/traefik/traefik.toml:/traefik.toml
+      - ./docker/staging/traefik/acme.json:/acme.json
     labels:
       - "traefik.docker.network=nyx"
       - "traefik.port=8080"
