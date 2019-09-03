@@ -13,6 +13,9 @@ pids
 *.seed
 *.pid.lock
 
+# Ignore docker override.yml
+docker-compose.override.yml
+
 # For webpack monitor module
 .monitor
 

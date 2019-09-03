@@ -73,7 +73,7 @@ module.exports = {
     // Doc: https://nuxt-community.github.io/nuxt-i18n/
     'nuxt-i18n',
     // Doc: https://github.com/nuxt-community/sentry-module
-    '@nuxtjs/sentry',
+    // '@nuxtjs/sentry',
     // Doc: https://github.com/nuxt-community/device-module
     '@nuxtjs/device',
     // Doc: https://github.com/nuxt-community/analytics-module
@@ -122,9 +122,9 @@ module.exports = {
    ** Sentry configuration
    ** See https://github.com/nuxt-community/sentry-module#setup
    */
-  sentry: {
-    dsn: process.env.NUXT_MODULE_SENTRY_DSN
-  },
+  // sentry: {
+  //   dsn: process.env.NUXT_MODULE_SENTRY_DSN
+  // },
   /*
    ** Sentry configuration
    ** See https://github.com/nuxt-community/sentry-module#setup
@@ -184,5 +184,14 @@ module.exports = {
      ** You can extend webpack config here
      */
     extend (config, ctx) {}
+  },
+  server: {
+    host: process.env.NUXT_HOST || '0.0.0.0',
+    port: process.env.NUXT_PORT || 5000
+  },
+  watchers: {
+    webpack: {
+      poll: 1000
+    }
   }
 }

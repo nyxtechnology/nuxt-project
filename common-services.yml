@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  install:
+    image: wodby/node:$NODE_TAG
+    working_dir: /home/node/app
+    environment:
+      - NPM_CONFIG_PREFIX=/home/node/app/.npm-global
+    volumes:
+      - ./:/home/node/app
+    command: npm i
+
+  installPackage:
+    image: wodby/node:$NODE_TAG
+    working_dir: /home/node/app
+    environment:
+      - NPM_CONFIG_PREFIX=/home/node/app/.npm-global
+    volumes:
+      - ./:/home/node/app
+    command: npm i $PACKAGE_DEPENDENCE $PACKAGE
+
+  build:
+    image: wodby/node:$NODE_TAG
+    working_dir: /home/node/app
+    environment:
+      - NPM_CONFIG_PREFIX=/home/node/app/.npm-global
+    volumes:
+      - ./:/home/node/app
+    command: npm run build
+
+  lint:
+    image: wodby/node:$NODE_TAG
+    working_dir: /home/node/app
+    environment:
+      - NPM_CONFIG_PREFIX=/home/node/app/.npm-global
+    volumes:
+      - ./:/home/node/app
+    command: npm run lint
